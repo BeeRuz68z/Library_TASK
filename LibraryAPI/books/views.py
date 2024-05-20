@@ -7,7 +7,6 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.exceptions import NotFound
 from rest_framework.filters import  SearchFilter
 from rest_framework.pagination import PageNumberPagination
-
 from .models import *
 from .serializer import *
 from .filter import *
