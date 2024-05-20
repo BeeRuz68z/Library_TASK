@@ -1,4 +1,4 @@
-You are tasked with building a simple Django REST API for managing a library of books. The API should allow
+Building a simple Django REST API for managing a library of books. The API should allow
 users to perform CRUD operations (Create, Read, Update, Delete) on books stored in a database. Each book
 should have the following attributes: title, author, publication date, and ISBN number.
 IMPLEMENTATION:
