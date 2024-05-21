@@ -15,8 +15,6 @@ class BookAPITests(APITestCase):
             'ISBN': 1111111111111
         }
         self.book = Book.objects.create(**self.book_data)
-
-        # Store the URLs for list and detail views
         self.list_url = reverse('book-list')
         self.detail_url = reverse('book-detail', args=[self.book.id])
 
@@ -33,14 +31,12 @@ class BookAPITests(APITestCase):
         self.assertEqual(Book.objects.get(id=response.data['id']).title, new_book_data['title'])
 
     def test_retrieve_book(self):
- 
         response = self.client.get(self.detail_url, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data['title'], self.book.title)
         self.assertEqual(response.data['ISBN'], self.book.ISBN)
 
     def test_update_book(self):
-
         updated_data = {
             'title': 'Updated Book',
             'author': 'Updated Author',
@@ -53,7 +49,6 @@ class BookAPITests(APITestCase):
         self.assertEqual(self.book.title, updated_data['title'])
 
     def test_partial_update_book(self):
-
         partial_data = {'title': 'Partially Updated Book'}
         response = self.client.patch(self.detail_url, partial_data, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
@@ -66,7 +61,6 @@ class BookAPITests(APITestCase):
         self.assertEqual(Book.objects.count(), 0)
     
     def test_list_books(self):
-
         response = self.client.get(self.list_url, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(len(response.data), 4)
