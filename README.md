@@ -102,3 +102,5 @@ Some API endpoints require authentication. You can obtain a token by sending a P
 
 --**Testing**
 You can run tests by running:
+
+python manage.py test
