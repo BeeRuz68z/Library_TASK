@@ -1,78 +1,61 @@
-# Book API
-
+Book API
 This API allows you to manage a collection of books.
 
-## Getting Started
-
+Getting Started
 To use the API, you can follow these steps:
 
-1. Clone the repository:
-https://github.com/BeeRuz68z/Library_TASK.git
+Clone the repository: https://github.com/BeeRuz68z/Library_TASK.git
 
-2. Install the required dependencies:
-pip install -r requirements.txt
+Install the required dependencies: pip install -r requirements.txt
 
-3. Run the development server:
-python manage.py runserver
+Run the development server: python manage.py runserver
 
-
-## API Endpoints
-
-### 1. Retrieve All Books
-
-- **URL:** `/books/allbooks/`
-- **Method:** `GET`
-- **Success Response:**
-- **Code:** 200
-- **Content:** 
- ```json
- [
-     {
-         "id": 1,
-         "title": "Example Book",
-         "author": "John Doe",
-         "publicationDate": "2022-01-01",
-         "ISBN": "1234567890123"
-     },
-     {
-         "id": 2,
-         "title": "Another Book",
-         "author": "Jane Smith",
-         "publicationDate": "2022-02-01",
-         "ISBN": "9876543210987"
-     }
- ]
- ```
-- **Error Response:**
-- **Code:** 404
-- **Content:** `{ "message": "No books found" }`
-
-### 2. Retrieve a Book by ID
-
-- **URL:** `/books/idbook/<int:id>/`
-- **Method:** `GET`
-- **Success Response:**
-- **Code:** 200
-- **Content:** 
- ```json
- {
-     "id": 1,
-     "title": "Example Book",
-     "author": "John Doe",
-     "publicationDate": "2022-01-01",
-     "ISBN": "1234567890123"
- }
- ```
-- **Error Response:**
-- **Code:** 404
-- **Content:** `{ "message": "Book not found" }`
-
-### 3. Create a New Book
-
-- **URL:** `/books/createbook/`
-- **Method:** `POST`
-- **Input Format:** 
-```json
+API Endpoints
+1. Retrieve All Books
+URL: /books/allbooks/
+Method: GET
+Success Response:
+Code: 200
+Content:
+[
+    {
+        "id": 1,
+        "title": "Example Book",
+        "author": "John Doe",
+        "publicationDate": "2022-01-01",
+        "ISBN": "1234567890123"
+    },
+    {
+        "id": 2,
+        "title": "Another Book",
+        "author": "Jane Smith",
+        "publicationDate": "2022-02-01",
+        "ISBN": "9876543210987"
+    }
+]
+Error Response:
+Code: 404
+Content: { "message": "No books found" }
+2. Retrieve a Book by ID
+URL: /books/idbook/<int:id>/
+Method: GET
+Success Response:
+Code: 200
+Content:
+{
+    "id": 1,
+    "title": "Example Book",
+    "author": "John Doe",
+    "publicationDate": "2022-01-01",
+    "ISBN": "1234567890123"
+}
+Error Response:
+Code: 404
+Content: { "message": "Book not found" }
+3. Create a New Book
+URL: /books/createbook/
+Method: POST
+Input Format:
 {
    "title": "New Book",
    "author": "New Author",
