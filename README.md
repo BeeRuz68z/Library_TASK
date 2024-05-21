@@ -91,6 +91,8 @@ Content:
     "publicationDate": "2022-03-01",
     "ISBN": "1111111111111"
 }
+
+
 Error Response:
 Code: 400
 Content: { "message": "Invalid data provided" }
