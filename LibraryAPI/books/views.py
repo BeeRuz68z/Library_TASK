@@ -7,10 +7,14 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.exceptions import NotFound
 from rest_framework.filters import  SearchFilter
 from rest_framework.pagination import PageNumberPagination
+from rest_framework import viewsets
 from .models import *
 from .serializer import *
 from .filter import *
 
+class BookViewSet(viewsets.ModelViewSet):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
 
 # Create your views here.
 class BookPagination(PageNumberPagination):

@@ -8,4 +8,4 @@ class Book(models.Model):
     ISBN = models.IntegerField()
 
     def __str__(self):
-        return self.title + self.author
+        return self.title
