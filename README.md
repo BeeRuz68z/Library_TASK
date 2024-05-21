@@ -81,7 +81,7 @@ python manage.py runserver
 }
 
 
---**Success Response:**
+**Success Response:**
 Code: 201
 Content:
 {
@@ -97,10 +97,10 @@ Error Response:
 Code: 400
 Content: { "message": "Invalid data provided" }
 
---**Authentication**
+**Authentication**
 Some API endpoints require authentication. You can obtain a token by sending a POST request to /api/token/ with your username and password in the request body.
 
---**Testing**
+**Testing**
 You can run tests by running:
 
 python manage.py test
