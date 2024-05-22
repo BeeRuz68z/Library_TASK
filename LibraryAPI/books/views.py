@@ -55,6 +55,11 @@ class bookoneview(APIView):
 
 class createbook(APIView):
     permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        a = Book.objects.all()
+        serializer = BookSerializer(a,many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
     def post(self,request):
         serializer = BookSerializer(data=request.data)
         if serializer.is_valid():
